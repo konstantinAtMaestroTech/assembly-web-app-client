@@ -10,8 +10,8 @@ const Modal = ({ handleClose, show, startVideo, setScanSuccess, scanSuccess }) =
     const scannerRef = useRef(null);
 
     useEffect(() => {
-        const servUrl = 'http://localhost:3001/getData/AssemblyID'
-        const viewerUrl = 'http://localhost:8080/assemblyID'
+        const servUrl = 'https://server-web-app.maestrotest.info/getData/AssemblyID'; //'http://localhost:3001/getData/AssemblyID';
+        const viewerUrl = 'https://viewer-web-app.maestrotest.info/assemblyID'; //'http://localhost:8080/assemblyID';
         const video = videoRef.current;
         function setResult(result) {
             scannerRef.current.stop()

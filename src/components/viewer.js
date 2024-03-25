@@ -1,7 +1,7 @@
 export default function Viewer({urn}) {
     const params = new URLSearchParams(window.location.search);
     const paramValue = params.get('param');
-    const viewerUrl = `http://localhost:8080/?param=${paramValue}#${urn}`;
+    const viewerUrl = `https://viewer-web-app.maestrotest.info/?param=${paramValue}#${urn}`; //`http://localhost:8080/?param=${paramValue}#${urn}`;
     console.log('Viewer URL: ', viewerUrl);
     
     return (
