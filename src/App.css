@@ -2,37 +2,167 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* * {
+  border: 1px solid #000
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.AdaptiveSelector,
+.TimingTab,
+.ScannerTab,
+.DetailTab {
+  height: 7vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.ScannerTab {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+
+.divInfo {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  animation: slideup 0.5s ease-out;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.btnScannerTab,
+.btnDetailTab,
+.btnTimingTab {
+  animation: slideup 0.5s ease-out;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 2px solid #000; /* Black border */
+  border-radius: 10px;
+  font-size: 14px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.btnScannerTab.selected,
+.btnDetailTab.selected,
+.btnTimingTab.selected {
   color: white;
+  background-color: #db5a14;
 }
 
-.App-link {
-  color: #61dafb;
+.App .AdaptiveSelector .btnScannerTab {
+  transition: transform 0.5s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App.panel-closing .AdaptiveSelector .btnScannerTab {
+  transform: translateY(150%);
+}
+
+.App .AdaptiveSelector .btnDetailTab {
+  transition: transform 0.5s ease-in-out;
+}
+
+.App.panel-closing .AdaptiveSelector .btnDetailTab {
+  transform: translateY(150%);
+}
+
+.App .AdaptiveSelector .btnTimingTab {
+  transition: transform 0.5s ease-in-out;
+}
+
+.App.panel-closing .AdaptiveSelector .btnTimingTab {
+  transform: translateY(150%);
+}
+
+.btnBack {
+  animation: slideup 0.5s ease-out;
+  color: #ffffff;
+  background-color: #db5a14;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 2px solid #000; /* Black border */
+  border-radius: 10px;
+  font-size: 14px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+  width: 13vw;
+}
+
+.App .commonTabClass .btnBack {
+  transition: transform 0.5s ease-in-out;
+}
+
+.App .commonTabClass .btnScan {
+  transition: transform 0.5s ease-in-out;
+}
+
+.App .commonTabClass .divInfo {
+  transition: transform 0.5s ease-in-out;
+}
+
+.App .commonTabClass.panel-closing .btnBack {
+  transform: translateY(150%);
+}
+
+.App .commonTabClass.panel-closing .btnScan {
+  transform: translateY(150%);
+}
+
+.App .commonTabClass.panel-closing .divInfo {
+  transform: translateY(150%);
+}
+
+.btnScan {
+  animation: slideup 0.5s ease-out;
+  color: #ffffff;
+  background-color: #ffffff;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: 2px solid #000; /* Black border */
+  border-radius: 10px;
+  font-size: 14px;
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnScan.compressed {
+  transform: scaleX(0.2);
+  transform-origin: left;
+}
+
+.btnScan.compressed .btnScanIcon {
+  transform: scaleX(5);
+}
+
+.btnScan svg {
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
