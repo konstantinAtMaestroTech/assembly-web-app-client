@@ -5,9 +5,26 @@ import AdaptiveSelector from './components/adaptiveSelector'
 import DetailTab from './components/detailTab'
 import ScannerTab from './components/scannerTab'
 import TimingTab from './components/timingTab'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    // Set the main container's height when the component mounts
+    document.querySelector('.App').style.height = `${window.innerHeight}px`;
+
+    // Update the height when the window is resized
+    window.addEventListener('resize', () => {
+      document.querySelector('.App').style.height = `${window.innerHeight}px`;
+    });
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', () => {
+        document.querySelector('.App').style.height = `${window.innerHeight}px`;
+      });
+    };
+  }, []);
 
   const URN = 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6bWFlc3Ryby10ZXN0LWJ1Y2tldC90ZXN0LnJ2dA'
   const [selectedMode, setSelectedMode] = useState('selector');
