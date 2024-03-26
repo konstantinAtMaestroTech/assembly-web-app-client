@@ -2,9 +2,17 @@
   text-align: center;
 }
 
-html, body {
-  height: 100vh;  /* standard definition (as fallback) */
-  height: 100dvh; /* dynamic vh will make the trick on iOS */
+
+html,
+body,
+.App {
+  text-align: center;
+  color: white;
+
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
 }
 
 /* * {
