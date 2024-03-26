@@ -1,11 +1,7 @@
-.App {
+html {
   text-align: center;
-  height: 100svh;
+  height: 100dvh;
 }
-
-/* * {
-  border: 1px solid #000
-} */
 
 .AdaptiveSelector,
 .TimingTab,
