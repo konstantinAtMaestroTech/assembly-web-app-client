@@ -3,6 +3,10 @@ html {
   height: 100dvh;
 }
 
+html {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 .AdaptiveSelector,
 .TimingTab,
 .ScannerTab,
