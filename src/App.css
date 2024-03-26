@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+html, body {
+  height: 100vh;  /* standard definition (as fallback) */
+  height: 100dvh; /* dynamic vh will make the trick on iOS */
+}
+
 /* * {
   border: 1px solid #000
 } */
